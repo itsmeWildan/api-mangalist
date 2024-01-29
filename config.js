@@ -1,12 +1,13 @@
 // digunakan sebagai tempat kita menyimpan konfigurasi untuk database dan juga untuk pagination.
+const dotenv = require('dotenv');
+dotenv.config();
 
 const config = {
-    db: {
-      host: "localhost",
-      user: "root",
-      password: "",
-      database: "mangalisting",
-      connectTimeout: 60000
-    }
-  };
-  module.exports = config;
+  db: {
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME
+  }
+};
+module.exports = config;

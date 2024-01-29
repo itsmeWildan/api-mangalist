@@ -1,12 +1,17 @@
 // tempat untuk fungsi pembantu, sebagai contoh, untuk mengitung pagination
 
+function getOffset(currentPage = 1, listPerPage) {
+  return (currentPage - 1) * [listPerPage];
+}
+
 function CekRow(rows) {
-    if (!rows) {
-      return [];
-    }
-    return rows;
+  if (!rows) {
+    return [];
   }
-  
-  module.exports = {
-    CekRow
-  }
+  return rows;
+}
+
+module.exports = {
+  getOffset,
+  CekRow
+}
